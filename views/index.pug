@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+
+    h1 Portfolio of Side Projects
+
+    p This is a portfolio of projects I have completed in order to challenge myself and grow in my knowledge of web development. Over the past year I have been learning to become a web developer through Treehouse's Front End Web Development Techdegree and now its Full Stack JavaScript Techdegree. When I'm not working on the coursework and projects for those programs I like to work on side projects. 
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+      each project, index in projects
+        .cell
+          a(href=`/projects/${index}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt=`${project.project_name}`)
+            h5 #{project.project_name}
